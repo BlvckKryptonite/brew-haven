@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const menuItems = [
@@ -129,6 +129,9 @@ const menuItems = [
 export default function Menu() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [showAllItems, setShowAllItems] = useState(false);
+
+  const displayedItems = showAllItems ? menuItems : menuItems.slice(0, 6);
 
   return (
     <section id="menu" className="py-20 px-4 sm:px-6 lg:px-8 bg-stone-900/30" ref={ref}>
@@ -149,7 +152,7 @@ export default function Menu() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuItems.map((item, index) => (
+          {displayedItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 50 }}
@@ -164,7 +167,7 @@ export default function Menu() {
                   transition={{ duration: 0.5 }}
                   src={item.image}
                   alt={item.alt}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-64 object-cover object-center"
                 />
               </div>
               <div className="p-6">
@@ -181,19 +184,38 @@ export default function Menu() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <Button
-            variant="outline"
-            className="border-2 border-amber-400 text-amber-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-400 hover:text-stone-950 transition-all duration-200"
+        {!showAllItems && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="text-center mt-12"
           >
-            View Full Menu
-          </Button>
-        </motion.div>
+            <Button
+              onClick={() => setShowAllItems(true)}
+              className="bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 px-8 py-3 rounded-lg font-semibold text-lg hover:from-amber-300 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View Full Menu
+            </Button>
+          </motion.div>
+        )}
+
+        {showAllItems && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mt-12"
+          >
+            <Button
+              onClick={() => setShowAllItems(false)}
+              variant="outline"
+              className="border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-amber-400 hover:text-stone-950 transition-all duration-300"
+            >
+              Show Less
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
