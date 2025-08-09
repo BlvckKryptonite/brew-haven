@@ -5,48 +5,48 @@ import { useRef } from "react";
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1494314671902-399b18174975?q=80&w=500&auto=format&fit=crop",
-    alt: "Modern coffee shop interior with warm ambient lighting",
+    src: "/assets/artisan-latte_1754775310994.jpg",
+    alt: "Artisan latte with beautiful leaf pattern latte art",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=500&auto=format&fit=crop",
-    alt: "Freshly roasted coffee beans with aromatic steam",
+    src: "/assets/double-espresso_1754775311003.jpg",
+    alt: "Double espresso shot being extracted from professional machine",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=500&auto=format&fit=crop",
-    alt: "Expert barista operating professional espresso machine",
+    src: "/assets/lavender-honey-latte_1754776202134.jpg",
+    alt: "Lavender honey latte with dried lavender garnish",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1461988091159-192b6df7054f?q=80&w=500&auto=format&fit=crop",
-    alt: "Beautiful latte art creation in progress",
+    src: "/assets/vanilla-oat-corcado_1754775311006.jpg",
+    alt: "Vanilla oat cortado in gibraltar glass with latte art",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=500&auto=format&fit=crop",
-    alt: "Artisanal pour-over coffee brewing with Chemex dripper",
+    src: "/assets/single-pour-over_1754776207854.jpg",
+    alt: "Pour-over coffee preparation with Chemex dripper",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1494314671902-399b18174975?q=80&w=500&auto=format&fit=crop",
-    alt: "Comfortable seating area with warm ambiance",
+    src: "/assets/nitro-cold-brew_1754775311004.jpg",
+    alt: "Cold brew coffee served in tall glass with ice",
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1521017432531-fbd92d599775?q=80&w=500&auto=format&fit=crop",
-    alt: "Rustic wooden tables and vintage coffee equipment display",
+    src: "/assets/artisan-pastries_1754775311002.jpg",
+    alt: "Artisanal pastries and croissants on wooden serving board",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1541782814459-bb2af2f05b55?q=80&w=500&auto=format&fit=crop",
-    alt: "Fresh croissants and pastries in vintage display case",
+    src: "/assets/strawberry-crepes_1754775311005.jpg",
+    alt: "Strawberry crepes with berry drizzle and mint garnish",
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1517702165814-63b39f4a92f9?q=80&w=500&auto=format&fit=crop",
-    alt: "Iced coffee being poured over ice cubes in tall glass",
+    src: "/assets/wembley-waffles_1754775311006.jpg",
+    alt: "Belgian waffles with blueberries and syrup drizzle",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
@@ -80,14 +80,14 @@ export default function Gallery() {
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="group cursor-pointer overflow-hidden rounded-xl"
+              className="group cursor-pointer overflow-hidden rounded-xl aspect-[3/4]"
             >
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.5 }}
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-64 object-cover"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           ))}
