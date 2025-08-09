@@ -151,7 +151,7 @@ export default function Menu() {
   }, []);
 
   // Mobile slideshow navigation
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentSlide(slideIndex);
   };
 
@@ -164,15 +164,15 @@ export default function Menu() {
   };
 
   // Touch gesture handling for mobile slideshow
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
@@ -216,7 +216,7 @@ export default function Menu() {
   }, [loadMoreItems, showAllItems]);
 
   return (
-    <section id="menu" className="py-20 px-4 sm:px-6 lg:px-8 bg-stone-900/30 mobile-scroll-container" ref={ref}>
+    <section id="menu" className="py-16 px-4 sm:px-6 lg:px-8 bg-stone-900/30 mobile-scroll-container" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

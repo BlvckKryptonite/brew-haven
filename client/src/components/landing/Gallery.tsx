@@ -60,7 +60,7 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="gallery" className="py-20 px-4 sm:px-6 lg:px-8 bg-stone-900/30" ref={ref}>
+    <section id="gallery" className="py-16 px-4 sm:px-6 lg:px-8 bg-stone-900/30" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

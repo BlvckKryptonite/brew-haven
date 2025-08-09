@@ -44,7 +44,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section className="py-16 px-4 sm:px-6 lg:px-8" ref={ref}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
