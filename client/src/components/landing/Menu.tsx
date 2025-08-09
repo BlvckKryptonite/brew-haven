@@ -23,11 +23,11 @@ const menuItems = [
   },
   {
     id: 3,
-    name: "Vanilla Oat Cortado",
-    description: "Silky espresso with steamed oat milk and a hint of vanilla, perfectly balanced in a gibraltar glass.",
-    price: "$4.25",
-    image: "/assets/vanilla-oat-corcado_1754775311006.jpg",
-    alt: "Vanilla oat cortado in gibraltar glass with latte art",
+    name: "Seasonal Affogato",
+    description: "Rich vanilla gelato drowned in our double espresso shot. Seasonal variations include caramel or berry compote.",
+    price: "$6.75",
+    image: "/assets/Seasonal-Affogato_1754775311005.webp",
+    alt: "Affogato with vanilla gelato and espresso in glass bowl",
   },
   {
     id: 4,
@@ -111,11 +111,11 @@ const menuItems = [
   },
   {
     id: 14,
-    name: "Seasonal Affogato",
-    description: "Rich vanilla gelato drowned in our double espresso shot. Seasonal variations include caramel or berry compote.",
-    price: "$6.75",
-    image: "/assets/Seasonal-Affogato_1754775311005.webp",
-    alt: "Affogato with vanilla gelato and espresso in glass bowl",
+    name: "Vanilla Oat Cortado",
+    description: "Silky espresso with steamed oat milk and a hint of vanilla, perfectly balanced in a gibraltar glass.",
+    price: "$4.25",
+    image: "/assets/vanilla-oat-corcado_1754775311006.jpg",
+    alt: "Vanilla oat cortado in gibraltar glass with latte art",
   },
   {
     id: 15,
