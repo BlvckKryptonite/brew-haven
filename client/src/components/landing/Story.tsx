@@ -20,7 +20,7 @@ export default function Story() {
               Our <span className="gradient-text">Story</span>
             </h3>
             <p className="text-xl text-stone-400 mb-6 leading-relaxed">
-              Founded in 2015 by coffee enthusiasts Maria and David Chen, Brew Haven began as a small
+              Founded in 2015 by coffee enthusiasts Maria and David Hutchinson, Brew Haven began as a small
               neighborhood café with a simple mission: to serve exceptional coffee while building
               meaningful connections within our community.
             </p>
@@ -52,8 +52,8 @@ export default function Story() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=600&auto=format&fit=crop"
-              alt="Professional barista crafting coffee with precision and care"
+              src="/assets/our-story_1754770818949.jpg"
+              alt="Maria and David Hutchinson, founders of Brew Haven, in their aprons outside the cafe"
               className="rounded-xl shadow-2xl w-full h-auto"
             />
           </motion.div>
