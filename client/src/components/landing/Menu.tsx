@@ -226,7 +226,7 @@ export default function Menu() {
               }}
               className="bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 px-8 py-3 rounded-lg font-semibold text-lg hover:from-amber-300 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              View Full Menu ({menuItems.length - loadedItems} more items)
+              View Full Menu
             </Button>
           </motion.div>
         )}
