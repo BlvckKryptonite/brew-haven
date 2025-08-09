@@ -52,6 +52,30 @@ const menuItems = [
     image: "https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=400&auto=format&fit=crop",
     alt: "Premium coffee beans in burlap sack with roasting equipment",
   },
+  {
+    id: 7,
+    name: "Vanilla Oat Cortado",
+    description: "Silky espresso with steamed oat milk and a hint of vanilla, perfectly balanced in a gibraltar glass.",
+    price: "$4.25",
+    image: "https://images.unsplash.com/photo-1461988091159-192b6df7054f?q=80&w=400&auto=format&fit=crop",
+    alt: "Vanilla oat cortado in gibraltar glass with latte art",
+  },
+  {
+    id: 8,
+    name: "Lavender Honey Latte",
+    description: "Aromatic lavender meets local wildflower honey in our signature espresso blend with steamed milk.",
+    price: "$5.25",
+    image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=400&auto=format&fit=crop",
+    alt: "Lavender honey latte with dried lavender garnish",
+  },
+  {
+    id: 9,
+    name: "Seasonal Affogato",
+    description: "Rich vanilla gelato drowned in our double espresso shot. Seasonal variations include caramel or berry compote.",
+    price: "$6.75",
+    image: "https://images.unsplash.com/photo-1473929731637-2c3e9e9f6d5b?q=80&w=400&auto=format&fit=crop",
+    alt: "Affogato with vanilla gelato and espresso in glass bowl",
+  },
 ];
 
 export default function Menu() {
