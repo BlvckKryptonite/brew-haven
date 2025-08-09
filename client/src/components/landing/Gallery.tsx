@@ -69,7 +69,7 @@ export default function Gallery() {
           className="text-center mb-16"
         >
           <h3 className="text-4xl md:text-5xl font-bold mb-6">
-            Coffee <span className="gradient-text">Gallery</span>
+            The Haven <span className="gradient-text">Gallery</span>
           </h3>
           <p className="text-xl text-stone-400 max-w-3xl mx-auto">
             Step inside our world of coffee craftsmanship and community. Every image tells a story of
