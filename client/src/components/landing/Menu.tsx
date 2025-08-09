@@ -10,7 +10,7 @@ const menuItems = [
     name: "Artisan Latte",
     description: "Perfectly steamed milk meets our signature espresso blend, topped with intricate latte art.",
     price: "$4.95",
-    image: "/assets/artisan-latte_1754770818937.jpg",
+    image: "/assets/artisan-latte_1754772263111.jpg",
     alt: "Artisan Latte with beautiful leaf pattern latte art",
   },
   {
@@ -26,7 +26,7 @@ const menuItems = [
     name: "Double Espresso",
     description: "Intense and complex shot showcasing the full character of our house blend.",
     price: "$3.25",
-    image: "/assets/double-espresso_1754770818947.jpg",
+    image: "/assets/double-espresso_1754772263121.jpg",
     alt: "Double espresso shot being extracted from professional machine",
   },
   {
@@ -34,7 +34,7 @@ const menuItems = [
     name: "Nitro Cold Brew",
     description: "Smooth and creamy cold brew infused with nitrogen for a velvety cascade effect.",
     price: "$4.75",
-    image: "/assets/nitro-cold-brew_1754770818948.jpg",
+    image: "/assets/nitro-cold-brew_1754772263124.jpg",
     alt: "Cold brew coffee served in tall glass with ice",
   },
   {
@@ -50,7 +50,7 @@ const menuItems = [
     name: "House Blend Beans",
     description: "Take home our signature roast. Freshly roasted beans available whole or ground to order.",
     price: "$14.95",
-    image: "/assets/house-blend-beans_1754770818947.jpg",
+    image: "/assets/house-blend-beans_1754772263122.jpg",
     alt: "Premium coffee beans in burlap sack with roasting equipment",
   },
   {
@@ -66,7 +66,7 @@ const menuItems = [
     name: "Lavender Honey Latte",
     description: "Aromatic lavender meets local wildflower honey in our signature espresso blend with steamed milk.",
     price: "$5.25",
-    image: "/assets/lavender-honey-latte_1754770818947.jpg",
+    image: "/assets/lavender-honey-latte_1754772263123.jpg",
     alt: "Lavender honey latte with dried lavender garnish",
   },
   {
@@ -74,7 +74,7 @@ const menuItems = [
     name: "Seasonal Affogato",
     description: "Rich vanilla gelato drowned in our double espresso shot. Seasonal variations include caramel or berry compote.",
     price: "$6.75",
-    image: "/assets/Seasonal-Affogato_1754770818950.webp",
+    image: "/assets/Seasonal-Affogato_1754772263125.webp",
     alt: "Affogato with vanilla gelato and espresso in glass bowl",
   },
   {
@@ -82,7 +82,7 @@ const menuItems = [
     name: "Blueberry Pancakes",
     description: "Fluffy pancakes topped with fresh blueberries, whipped cream, and maple syrup drizzle.",
     price: "$8.95",
-    image: "/assets/blueberry-pancake_1754770818946.jpg",
+    image: "/assets/blueberry-pancake_1754772263119.jpg",
     alt: "Stack of blueberry pancakes with whipped cream and berries",
   },
   {
@@ -90,7 +90,7 @@ const menuItems = [
     name: "Chocolate Pancake Stack",
     description: "Decadent chocolate pancakes with chocolate sauce, fresh berries, and powdered sugar.",
     price: "$9.95",
-    image: "/assets/chocolate-pan.stash_1754770818946.jpg",
+    image: "/assets/chocolate-pan.stash_1754772263119.jpg",
     alt: "Chocolate pancake stack with berries and chocolate drizzle",
   },
   {
@@ -98,7 +98,7 @@ const menuItems = [
     name: "Crusty Crumble",
     description: "Warm seasonal fruit crumble with a crispy oat topping, served with vanilla ice cream.",
     price: "$7.25",
-    image: "/assets/crusty-crumble_1754770818946.jpg",
+    image: "/assets/crusty-crumble_1754772263120.jpg",
     alt: "Fruit crumble slice with fork and coffee in background",
   },
   {
@@ -106,7 +106,7 @@ const menuItems = [
     name: "Strawberry Crepes",
     description: "Delicate crepes filled with fresh strawberries and cream, drizzled with berry compote.",
     price: "$8.75",
-    image: "/assets/strawberry-crepes_1754770818951.jpg",
+    image: "/assets/strawberry-crepes_1754772263126.jpg",
     alt: "Strawberry crepes with berry drizzle and mint garnish",
   },
   {
@@ -114,7 +114,7 @@ const menuItems = [
     name: "The Haven Club Sandwich",
     description: "Our signature sandwich with premium ingredients, served with arugula and house-made aioli.",
     price: "$12.95",
-    image: "/assets/the-haven-club sandwich_1754770818952.jpg",
+    image: "/assets/the-haven-club sandwich_1754772263126.jpg",
     alt: "Gourmet club sandwich on wooden cutting board",
   },
   {
@@ -122,7 +122,7 @@ const menuItems = [
     name: "Wembley Waffles",
     description: "Golden Belgian waffles topped with fresh fruit, maple syrup, and a drizzle of honey.",
     price: "$9.25",
-    image: "/assets/wembley-waffles_1754770818953.jpg",
+    image: "/assets/wembley-waffles_1754772263126.jpg",
     alt: "Belgian waffles with blueberries and syrup drizzle",
   },
 ];
