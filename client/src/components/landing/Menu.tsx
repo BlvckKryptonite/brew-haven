@@ -10,7 +10,7 @@ const menuItems = [
     name: "Artisan Latte",
     description: "Perfectly steamed milk meets our signature espresso blend, topped with intricate latte art.",
     price: "$4.95",
-    image: "/assets/artisan-latte_1754772263111.jpg",
+    image: "",
     alt: "Artisan Latte with beautiful leaf pattern latte art",
   },
   {
@@ -18,7 +18,7 @@ const menuItems = [
     name: "Single Origin Pour-Over",
     description: "Hand-brewed to perfection using beans from our featured single-origin farms.",
     price: "$6.50",
-    image: "/assets/single-pour-over_1754772263125.jpg",
+    image: "",
     alt: "Pour-over coffee preparation with Chemex dripper",
   },
   {
@@ -26,7 +26,7 @@ const menuItems = [
     name: "Double Espresso",
     description: "Intense and complex shot showcasing the full character of our house blend.",
     price: "$3.25",
-    image: "/assets/double-espresso_1754772263121.jpg",
+    image: "",
     alt: "Double espresso shot being extracted from professional machine",
   },
   {
@@ -34,7 +34,7 @@ const menuItems = [
     name: "Nitro Cold Brew",
     description: "Smooth and creamy cold brew infused with nitrogen for a velvety cascade effect.",
     price: "$4.75",
-    image: "/assets/nitro-cold-brew_1754772263124.jpg",
+    image: "",
     alt: "Cold brew coffee served in tall glass with ice",
   },
   {
@@ -42,7 +42,7 @@ const menuItems = [
     name: "Artisan Pastries",
     description: "Freshly baked croissants, muffins, and seasonal pastries made with locally sourced ingredients.",
     price: "$3.95",
-    image: "/assets/artisan-pastries_1754770818945.avif",
+    image: "",
     alt: "Artisanal pastries and croissants on wooden serving board",
   },
   {
@@ -50,7 +50,7 @@ const menuItems = [
     name: "House Blend Beans",
     description: "Take home our signature roast. Freshly roasted beans available whole or ground to order.",
     price: "$14.95",
-    image: "/assets/house-blend-beans_1754772263122.jpg",
+    image: "",
     alt: "Premium coffee beans in burlap sack with roasting equipment",
   },
   {
@@ -58,7 +58,7 @@ const menuItems = [
     name: "Vanilla Oat Cortado",
     description: "Silky espresso with steamed oat milk and a hint of vanilla, perfectly balanced in a gibraltar glass.",
     price: "$4.25",
-    image: "/assets/vanilla-oat-corcado_1754770818952.avif",
+    image: "",
     alt: "Vanilla oat cortado in gibraltar glass with latte art",
   },
   {
@@ -66,7 +66,7 @@ const menuItems = [
     name: "Lavender Honey Latte",
     description: "Aromatic lavender meets local wildflower honey in our signature espresso blend with steamed milk.",
     price: "$5.25",
-    image: "/assets/lavender-honey-latte_1754772263123.jpg",
+    image: "",
     alt: "Lavender honey latte with dried lavender garnish",
   },
   {
@@ -74,7 +74,7 @@ const menuItems = [
     name: "Seasonal Affogato",
     description: "Rich vanilla gelato drowned in our double espresso shot. Seasonal variations include caramel or berry compote.",
     price: "$6.75",
-    image: "/assets/Seasonal-Affogato_1754772263125.webp",
+    image: "",
     alt: "Affogato with vanilla gelato and espresso in glass bowl",
   },
   {
@@ -82,7 +82,7 @@ const menuItems = [
     name: "Blueberry Pancakes",
     description: "Fluffy pancakes topped with fresh blueberries, whipped cream, and maple syrup drizzle.",
     price: "$8.95",
-    image: "/assets/blueberry-pancake_1754772263119.jpg",
+    image: "",
     alt: "Stack of blueberry pancakes with whipped cream and berries",
   },
   {
@@ -90,7 +90,7 @@ const menuItems = [
     name: "Chocolate Pancake Stack",
     description: "Decadent chocolate pancakes with chocolate sauce, fresh berries, and powdered sugar.",
     price: "$9.95",
-    image: "/assets/chocolate-pan.stash_1754772263119.jpg",
+    image: "",
     alt: "Chocolate pancake stack with berries and chocolate drizzle",
   },
   {
@@ -98,7 +98,7 @@ const menuItems = [
     name: "Crusty Crumble",
     description: "Warm seasonal fruit crumble with a crispy oat topping, served with vanilla ice cream.",
     price: "$7.25",
-    image: "/assets/crusty-crumble_1754772263120.jpg",
+    image: "",
     alt: "Fruit crumble slice with fork and coffee in background",
   },
   {
@@ -106,7 +106,7 @@ const menuItems = [
     name: "Strawberry Crepes",
     description: "Delicate crepes filled with fresh strawberries and cream, drizzled with berry compote.",
     price: "$8.75",
-    image: "/assets/strawberry-crepes_1754772263126.jpg",
+    image: "",
     alt: "Strawberry crepes with berry drizzle and mint garnish",
   },
   {
@@ -114,7 +114,7 @@ const menuItems = [
     name: "The Haven Club Sandwich",
     description: "Our signature sandwich with premium ingredients, served with arugula and house-made aioli.",
     price: "$12.95",
-    image: "/assets/the-haven-club sandwich_1754772263126.jpg",
+    image: "",
     alt: "Gourmet club sandwich on wooden cutting board",
   },
   {
@@ -122,7 +122,7 @@ const menuItems = [
     name: "Wembley Waffles",
     description: "Golden Belgian waffles topped with fresh fruit, maple syrup, and a drizzle of honey.",
     price: "$9.25",
-    image: "/assets/wembley-waffles_1754772263126.jpg",
+    image: "",
     alt: "Belgian waffles with blueberries and syrup drizzle",
   },
 ];
