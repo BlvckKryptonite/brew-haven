@@ -32,12 +32,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center space-x-3">
-            <img 
-              src="/assets/coffee-icon.png" 
-              alt="Brew Haven Coffee Icon" 
-              className="h-10 w-10"
-            />
+          <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold gradient-text">Brew Haven</h1>
           </div>
 
