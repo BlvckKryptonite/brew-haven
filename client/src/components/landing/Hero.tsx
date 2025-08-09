@@ -12,11 +12,18 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Desktop Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
         style={{
           backgroundImage: `url('/assets/hero-image_1754778786475.jpg')`,
+        }}
+      />
+      {/* Mobile Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: `url('/assets/hero-image-mobile_1754779219228.jpg')`,
         }}
       />
       <div className="absolute inset-0 bg-stone-950/60" />

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -41,6 +41,59 @@ const testimonials = [
 export default function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Mobile slideshow navigation
+  const goToSlide = (slideIndex: number) => {
+    setCurrentSlide(slideIndex);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  // Touch gesture handling for mobile slideshow
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8" ref={ref}>
@@ -60,7 +113,8 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Desktop Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -88,6 +142,73 @@ export default function Testimonials() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile Slideshow Layout */}
+        <div className="md:hidden relative">
+          <div 
+            className="overflow-hidden rounded-xl"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <motion.div
+              className="flex transition-transform duration-300 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {testimonials.map((testimonial, index) => (
+                <div key={testimonial.id} className="w-full flex-shrink-0">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-stone-900/70 glass-effect rounded-xl p-8 mx-2"
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="flex text-amber-400 text-xl space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-stone-300 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-stone-950 font-bold text-lg mr-4">
+                        {testimonial.initial}
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-stone-100">{testimonial.name}</h5>
+                        <p className="text-stone-400 text-sm">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Dot Indicators */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                  index === currentSlide ? 'bg-amber-400' : 'bg-stone-600'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Mobile Counter */}
+          <div className="text-center mt-4">
+            <span className="text-stone-400 text-sm">
+              {currentSlide + 1} of {testimonials.length}
+            </span>
+          </div>
         </div>
       </div>
     </section>

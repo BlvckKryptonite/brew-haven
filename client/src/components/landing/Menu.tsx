@@ -314,21 +314,7 @@ export default function Menu() {
             </motion.div>
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-stone-900/80 text-amber-400 p-2 rounded-full hover:bg-stone-800 transition-colors duration-200 z-10"
-            aria-label="Previous item"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-stone-900/80 text-amber-400 p-2 rounded-full hover:bg-stone-800 transition-colors duration-200 z-10"
-            aria-label="Next item"
-          >
-            <ChevronRight size={24} />
-          </button>
+
 
           {/* Dot Indicators */}
           <div className="flex justify-center mt-6 space-x-2">
