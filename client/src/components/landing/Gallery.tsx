@@ -48,6 +48,11 @@ const galleryImages = [
     src: "/assets/wembley-waffles_1754775311006.jpg",
     alt: "Belgian waffles with blueberries and syrup drizzle",
   },
+  {
+    id: 10,
+    src: "/assets/house-blend-beans_1754775311004.jpg",
+    alt: "Premium coffee beans in burlap sack with roasting equipment",
+  },
 ];
 
 export default function Gallery() {

@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LazyImage } from "@/components/ui/LazyImage";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const menuItems = [
   {
@@ -132,8 +133,62 @@ export default function Menu() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [showAllItems, setShowAllItems] = useState(false);
   const [loadedItems, setLoadedItems] = useState(6);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const slideRef = useRef(null);
 
   const displayedItems = showAllItems ? menuItems : menuItems.slice(0, loadedItems);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Mobile slideshow navigation
+  const goToSlide = (slideIndex) => {
+    setCurrentSlide(slideIndex);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % displayedItems.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + displayedItems.length) % displayedItems.length);
+  };
+
+  // Touch gesture handling for mobile slideshow
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
 
   // Progressive loading for mobile performance
   const loadMoreItems = useCallback(() => {
@@ -178,7 +233,8 @@ export default function Menu() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8 sm:gap-6">
+        {/* Desktop Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -187,7 +243,7 @@ export default function Menu() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-stone-900/70 glass-effect rounded-xl overflow-hidden transition-all duration-300 group menu-item-mobile"
+              className="bg-stone-900/70 glass-effect rounded-xl overflow-hidden transition-all duration-300 group"
             >
               <div className="overflow-hidden">
                 <LazyImage
@@ -210,6 +266,90 @@ export default function Menu() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Mobile Slideshow Layout */}
+        <div className="md:hidden relative">
+          <div 
+            className="overflow-hidden rounded-xl"
+            ref={slideRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <motion.div
+              className="flex transition-transform duration-300 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {displayedItems.map((item, index) => (
+                <div key={item.id} className="w-full flex-shrink-0">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-stone-900/70 glass-effect rounded-xl overflow-hidden mx-2"
+                  >
+                    <div className="overflow-hidden">
+                      <LazyImage
+                        src={item.image}
+                        alt={item.alt}
+                        className="w-full h-64 object-cover object-center"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-2xl font-bold mb-2 text-stone-100">{item.name}</h4>
+                      <p className="text-stone-400 mb-4">{item.description}</p>
+                      <div className="flex justify-between items-center">
+                        <span className="text-2xl font-bold text-amber-400">{item.price}</span>
+                        <Button className="bg-amber-400 text-stone-950 px-4 py-2 rounded-lg font-semibold hover:bg-amber-300 transition-colors duration-200">
+                          Order Now
+                        </Button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-stone-900/80 text-amber-400 p-2 rounded-full hover:bg-stone-800 transition-colors duration-200 z-10"
+            aria-label="Previous item"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-stone-900/80 text-amber-400 p-2 rounded-full hover:bg-stone-800 transition-colors duration-200 z-10"
+            aria-label="Next item"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Dot Indicators */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {displayedItems.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                  index === currentSlide ? 'bg-amber-400' : 'bg-stone-600'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Mobile Counter */}
+          <div className="text-center mt-4">
+            <span className="text-stone-400 text-sm">
+              {currentSlide + 1} of {displayedItems.length}
+            </span>
+          </div>
         </div>
 
         {!showAllItems && loadedItems < menuItems.length && (
