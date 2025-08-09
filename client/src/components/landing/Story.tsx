@@ -30,12 +30,12 @@ export default function Story() {
                 values remain unchanged. We still source our beans directly from farmers, roast in small
                 batches, and treat every customer like family.
               </p>
-              <p className="text-lg leading-relaxed mb-8">
+              <p className="text-lg leading-relaxed">
                 Today, Brew Haven is proud to be a certified B-Corporation, committed to using business
                 as a force for good in our community and beyond.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mt-12">
               <Button
                 onClick={() => {
                   const featuresSection = document.getElementById('features');
@@ -43,8 +43,7 @@ export default function Story() {
                     featuresSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                variant="outline"
-                className="border-2 border-amber-400 text-amber-400 px-6 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-stone-950 transition-all duration-200"
+                className="bg-amber-400 text-stone-950 px-6 py-3 rounded-lg font-semibold hover:bg-amber-300 transition-colors duration-200"
               >
                 Our Values
               </Button>
