@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { LazyImage } from "@/components/ui/LazyImage";
 
 const menuItems = [
   {
@@ -130,11 +131,37 @@ export default function Menu() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [showAllItems, setShowAllItems] = useState(false);
+  const [loadedItems, setLoadedItems] = useState(6);
 
-  const displayedItems = showAllItems ? menuItems : menuItems.slice(0, 6);
+  const displayedItems = showAllItems ? menuItems : menuItems.slice(0, loadedItems);
+
+  // Progressive loading for mobile performance
+  const loadMoreItems = useCallback(() => {
+    if (loadedItems < menuItems.length) {
+      setLoadedItems(prev => Math.min(prev + 3, menuItems.length));
+    }
+  }, [loadedItems]);
+
+  // Auto-load more items when user scrolls near bottom on mobile
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth <= 768 && !showAllItems) {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const clientHeight = document.documentElement.clientHeight;
+        
+        if (scrollTop + clientHeight >= scrollHeight - 1000) {
+          loadMoreItems();
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loadMoreItems, showAllItems]);
 
   return (
-    <section id="menu" className="py-20 px-4 sm:px-6 lg:px-8 bg-stone-900/30" ref={ref}>
+    <section id="menu" className="py-20 px-4 sm:px-6 lg:px-8 bg-stone-900/30 mobile-scroll-container" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -151,7 +178,7 @@ export default function Menu() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8 sm:gap-6">
           {displayedItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -159,15 +186,16 @@ export default function Menu() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-stone-900/70 glass-effect rounded-xl overflow-hidden transition-all duration-300 group"
+              whileTap={{ scale: 0.98 }}
+              className="bg-stone-900/70 glass-effect rounded-xl overflow-hidden transition-all duration-300 group menu-item-mobile"
             >
               <div className="overflow-hidden">
-                <motion.img
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
+                <LazyImage
                   src={item.image}
                   alt={item.alt}
                   className="w-full h-64 object-cover object-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
                 />
               </div>
               <div className="p-6">
@@ -184,7 +212,7 @@ export default function Menu() {
           ))}
         </div>
 
-        {!showAllItems && (
+        {!showAllItems && loadedItems < menuItems.length && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -192,10 +220,13 @@ export default function Menu() {
             className="text-center mt-12"
           >
             <Button
-              onClick={() => setShowAllItems(true)}
+              onClick={() => {
+                setShowAllItems(true);
+                setLoadedItems(menuItems.length);
+              }}
               className="bg-gradient-to-r from-amber-400 to-amber-500 text-stone-950 px-8 py-3 rounded-lg font-semibold text-lg hover:from-amber-300 hover:to-amber-400 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              View Full Menu
+              View Full Menu ({menuItems.length - loadedItems} more items)
             </Button>
           </motion.div>
         )}
@@ -208,7 +239,12 @@ export default function Menu() {
             className="text-center mt-12"
           >
             <Button
-              onClick={() => setShowAllItems(false)}
+              onClick={() => {
+                setShowAllItems(false);
+                setLoadedItems(6);
+                // Smooth scroll to menu section
+                document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               variant="outline"
               className="border-amber-400 text-amber-400 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-amber-400 hover:text-stone-950 transition-all duration-300"
             >

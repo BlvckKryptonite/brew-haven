@@ -58,6 +58,37 @@
   --stone-darkest: hsl(24 9.8% 3.9%);
 }
 
+/* Shimmer animation for lazy loading */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Mobile scroll optimizations */
+@media (max-width: 768px) {
+  .mobile-scroll-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+  }
+  
+  .menu-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .menu-item-mobile {
+    scroll-snap-align: start;
+    scroll-margin-top: 2rem;
+  }
+}
+
 .dark {
   --background: hsl(0 0% 0%);
   --foreground: hsl(200 6.6667% 91.1765%);
