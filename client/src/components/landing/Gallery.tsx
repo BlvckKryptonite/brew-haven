@@ -33,6 +33,21 @@ const galleryImages = [
     src: "https://images.unsplash.com/photo-1494314671902-399b18174975?q=80&w=500&auto=format&fit=crop",
     alt: "Comfortable seating area with warm ambiance",
   },
+  {
+    id: 7,
+    src: "https://images.unsplash.com/photo-1521017432531-fbd92d599775?q=80&w=500&auto=format&fit=crop",
+    alt: "Rustic wooden tables and vintage coffee equipment display",
+  },
+  {
+    id: 8,
+    src: "https://images.unsplash.com/photo-1541782814459-bb2af2f05b55?q=80&w=500&auto=format&fit=crop",
+    alt: "Fresh croissants and pastries in vintage display case",
+  },
+  {
+    id: 9,
+    src: "https://images.unsplash.com/photo-1517702165814-63b39f4a92f9?q=80&w=500&auto=format&fit=crop",
+    alt: "Iced coffee being poured over ice cubes in tall glass",
+  },
 ];
 
 export default function Gallery() {

@@ -28,6 +28,14 @@ const testimonials = [
       "As a remote worker, I appreciate the fast WiFi, comfortable seating, and the fact that they don't rush you. Plus, their nitro cold brew is absolutely incredible!",
     initial: "A",
   },
+  {
+    id: 4,
+    name: "David Kim",
+    role: "Local Business Owner",
+    content:
+      "Brew Haven has become my go-to spot for client meetings. The atmosphere is professional yet relaxed, and their lavender honey latte is unlike anything I've tried elsewhere. Outstanding service!",
+    initial: "D",
+  },
 ];
 
 export default function Testimonials() {
@@ -52,7 +60,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
