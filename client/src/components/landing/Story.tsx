@@ -35,19 +35,7 @@ export default function Story() {
                 as a force for good in our community and beyond.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 mt-12">
-              <Button
-                onClick={() => {
-                  const featuresSection = document.getElementById('features');
-                  if (featuresSection) {
-                    featuresSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="bg-amber-400 text-stone-950 px-6 py-3 rounded-lg font-semibold hover:bg-amber-300 transition-colors duration-200"
-              >
-                Our Values
-              </Button>
-            </div>
+
           </motion.div>
 
           <motion.div
