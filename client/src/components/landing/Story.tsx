@@ -44,7 +44,7 @@ export default function Story() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}assets/our-story_1754865700629.jpg`}
+              src={`${import.meta.env.BASE_URL}attached_assets/our-story_1754865700629.jpg`}
               alt="Maria and David Hutchinson, founders of Brew Haven, in their aprons outside the cafe"
               className="rounded-xl shadow-2xl w-full h-auto"
             />
