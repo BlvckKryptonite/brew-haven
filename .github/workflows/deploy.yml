@@ -10,6 +10,10 @@ jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     
     steps:
       - name: Checkout 🛎️
@@ -39,3 +43,4 @@ jobs:
           branch: docs
           folder: dist/public
           clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
