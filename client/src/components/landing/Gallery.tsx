@@ -43,11 +43,7 @@ const galleryImages = [
     src: "/assets/gallery-7_1754832751405.jpg",
     alt: "Overhead view of coffee table with multiple drinks, pastries, and open book creating a social coffee experience",
   },
-  {
-    id: 9,
-    src: "/assets/gallery-8_1754832751406.jpg",
-    alt: "Artisan lattes with beautiful latte art served on wooden boards with cake slices",
-  },
+  
   {
     id: 10,
     src: "/assets/gallery-9_1754832751406.jpg",
