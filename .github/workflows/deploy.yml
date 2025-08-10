@@ -25,9 +25,12 @@ jobs:
         run: npm ci
 
       - name: Build 🔧
-        run: npm run build:static
+        run: npm run build
         env:
           NODE_ENV: production
+
+      - name: Add .nojekyll file 🚫
+        run: touch dist/public/.nojekyll
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

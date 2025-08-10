@@ -98,9 +98,10 @@ Add your tracking ID to the HTML template or use a React analytics library.
 ## Troubleshooting
 
 ### Common Issues
-1. **Blank page after deployment**: Check browser console for errors
-2. **Images not loading**: Verify asset paths are correct
-3. **Routing issues**: Ensure server serves index.html for all routes
+1. **Jekyll processing error**: Add `.nojekyll` file to disable Jekyll (included in deployment scripts)
+2. **Blank page after deployment**: Check browser console for errors
+3. **Images not loading**: Verify asset paths are correct
+4. **Routing issues**: Ensure server serves index.html for all routes
 
 ### Build Errors
 - Clear node_modules and reinstall dependencies

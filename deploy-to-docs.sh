@@ -19,6 +19,10 @@ fi
 echo "Copying built files..."
 cp -r dist/public/* .
 
+# Add .nojekyll file to disable Jekyll processing
+echo "Adding .nojekyll file..."
+touch .nojekyll
+
 # Add all files and commit
 git add .
 git commit -m "Deploy to GitHub Pages: $(date)"
