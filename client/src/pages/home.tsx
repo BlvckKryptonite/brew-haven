@@ -22,6 +22,13 @@ export default function Home() {
       <Contact />
       <Newsletter />
       <Footer />
+      
+      {/* Developer Credit */}
+      <div className="bg-stone-950 py-4 text-center border-t border-stone-800/50">
+        <p className="text-stone-500 text-sm">
+          Demo developed by Muma K.
+        </p>
+      </div>
     </div>
   );
 }
