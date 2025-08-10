@@ -28,11 +28,7 @@ const galleryImages = [
     src: "/assets/gallery-4_1754832751404.avif",
     alt: "Coffee beans and roasting process showcase",
   },
-  {
-    id: 6,
-    src: "/assets/gallery-5_1754832751405.avif",
-    alt: "Cozy coffee shop atmosphere with customers enjoying drinks",
-  },
+  
   {
     id: 7,
     src: "/assets/gallery-6_1754832751405.avif",
