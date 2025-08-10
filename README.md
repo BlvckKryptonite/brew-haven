@@ -143,6 +143,14 @@ Muted: #a8a29e (stone-400)
 2. Update the gallery array in `client/src/components/landing/Gallery.tsx`
 3. Optimize images for web (WebP/AVIF preferred)
 
+## 📸 Image Credits
+
+All photography used in this demo is sourced from:
+- **Unsplash**: Professional stock photography platform
+- **Pexels**: Free stock photo resource
+
+Images are used for demonstration purposes only. For commercial use, please ensure you have appropriate licensing for all imagery.
+
 ### Modifying Color Theme
 1. Update CSS variables in `client/src/index.css`
 2. Modify Tailwind classes throughout components
