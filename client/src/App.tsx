@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -9,12 +9,17 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import LoadingScreen from "@/components/LoadingScreen";
 
-function Router() {
+function AppRouter() {
+  // Handle GitHub Pages subdirectory routing
+  const base = import.meta.env.BASE_URL || '/';
+  
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <Router base={base}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
 }
 
@@ -34,7 +39,7 @@ function App() {
             <LoadingScreen key="loading" onLoadingComplete={handleLoadingComplete} />
           ) : (
             <div key="main">
-              <Router />
+              <AppRouter />
             </div>
           )}
         </AnimatePresence>

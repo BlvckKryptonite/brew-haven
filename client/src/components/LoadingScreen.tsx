@@ -38,7 +38,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         className="mb-8"
       >
         <img
-          src="/assets/logo_1754830575592.png"
+          src={`${import.meta.env.BASE_URL}assets/logo_1754830575592.png`}
           alt="Brew Haven Logo"
           className="w-48 h-48 md:w-64 md:h-64 object-contain"
         />

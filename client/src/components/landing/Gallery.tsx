@@ -5,54 +5,54 @@ import { useRef } from "react";
 const galleryImages = [
   {
     id: 1,
-    src: "/assets/brew-haven-gallery_1754832751394.avif",
+    src: `${import.meta.env.BASE_URL}assets/brew-haven-gallery_1754832751394.avif`,
     alt: "Brew Haven coffee shop interior with warm lighting and comfortable seating",
   },
   {
     id: 2,
-    src: "/assets/gallery-1_1754832751403.avif",
+    src: `${import.meta.env.BASE_URL}assets/gallery-1_1754832751403.avif`,
     alt: "Coffee preparation and artisanal brewing equipment",
   },
   {
     id: 3,
-    src: "/assets/gallery-2_1754832751404.avif",
+    src: `${import.meta.env.BASE_URL}assets/gallery-2_1754832751404.avif`,
     alt: "Fresh pastries and baked goods display",
   },
   {
     id: 4,
-    src: "/assets/gallery-3_1754832751404.avif",
+    src: `${import.meta.env.BASE_URL}assets/gallery-3_1754832751404.avif`,
     alt: "Specialty coffee drinks and latte art creations",
   },
   {
     id: 5,
-    src: "/assets/gallery-4_1754832751404.avif",
+    src: `${import.meta.env.BASE_URL}assets/gallery-4_1754832751404.avif`,
     alt: "Coffee beans and roasting process showcase",
   },
   
   {
     id: 7,
-    src: "/assets/gallery-6_1754832751405.avif",
+    src: `${import.meta.env.BASE_URL}assets/gallery-6_1754832751405.avif`,
     alt: "Professional barista crafting the perfect cup of coffee",
   },
   {
     id: 8,
-    src: "/assets/gallery-7_1754832751405.jpg",
+    src: `${import.meta.env.BASE_URL}assets/gallery-7_1754832751405.jpg`,
     alt: "Overhead view of coffee table with multiple drinks, pastries, and open book creating a social coffee experience",
   },
   
   {
     id: 10,
-    src: "/assets/gallery-9_1754832751406.jpg",
+    src: `${import.meta.env.BASE_URL}assets/gallery-9_1754832751406.jpg`,
     alt: "Golden croissant breakfast with coffee, butter, and fresh berries on elegant blue plate",
   },
   {
     id: 11,
-    src: "/assets/gallery-10_1754832751407.jpg",
+    src: `${import.meta.env.BASE_URL}assets/gallery-10_1754832751407.jpg`,
     alt: "Customer enjoying coffee in warm ambient lighting with glasses creating intimate coffee shop moment",
   },
   {
     id: 12,
-    src: "/assets/gallery-12_1754832751407.avif",
+    src: `${import.meta.env.BASE_URL}assets/gallery-12_1754832751407.avif`,
     alt: "Coffee shop community and social gathering atmosphere",
   },
 ];

@@ -10,7 +10,7 @@ const testimonials = [
     role: "Regular Customer",
     content:
       "The best coffee in the city, hands down. The baristas here are true artists, and you can taste the passion in every cup. The atmosphere is perfect for both work and relaxation.",
-    photo: "/assets/sarah-chen_1754833658579.jpg",
+    photo: `${import.meta.env.BASE_URL}assets/sarah-chen_1754833658579.jpg`,
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const testimonials = [
     role: "Coffee Enthusiast",
     content:
       "I've been coming here for three years and the quality never disappoints. The single-origin pour-overs are exceptional, and the staff always remembers my order. It feels like home.",
-    photo: "/assets/marcus-rodriguez_1754833653120.jpg",
+    photo: `${import.meta.env.BASE_URL}assets/marcus-rodriguez_1754833653120.jpg`,
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const testimonials = [
     role: "Freelance Designer",
     content:
       "As a remote worker, I appreciate the fast WiFi, comfortable seating, and the fact that they don't rush you. Plus, their nitro cold brew is absolutely incredible!",
-    photo: "/assets/amanda-foster_1754833643509.jpg",
+    photo: `${import.meta.env.BASE_URL}assets/amanda-foster_1754833643509.jpg`,
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const testimonials = [
     role: "Local Business Owner",
     content:
       "Brew Haven has become my go-to spot for client meetings. The atmosphere is professional yet relaxed, and their lavender honey latte is unlike anything I've tried elsewhere. Outstanding service!",
-    photo: "/assets/david-kim_1754833647657.jpg",
+    photo: `${import.meta.env.BASE_URL}assets/david-kim_1754833647657.jpg`,
   },
 ];
 

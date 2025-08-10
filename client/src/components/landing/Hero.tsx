@@ -16,14 +16,14 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
         style={{
-          backgroundImage: `url('/assets/hero-image_1754778786475.jpg')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}assets/hero-image_1754778786475.jpg')`,
         }}
       />
       {/* Mobile Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
         style={{
-          backgroundImage: `url('/assets/hero-image-mobile_1754779524226.jpg')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}assets/hero-image-mobile_1754779524226.jpg')`,
         }}
       />
       <div className="absolute inset-0 bg-stone-950/60" />
