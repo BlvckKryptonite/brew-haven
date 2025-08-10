@@ -15,6 +15,7 @@ This is a full-stack TypeScript React coffee shop website application called "Br
 - **Developer Credit**: Added "Demo developed by Muma K." at bottom of website
 - **GitHub Pages Optimization**: Removed Replit dev banner, cleaned up unused files, added simplified GitHub Actions workflow
 - **Documentation**: Created comprehensive README.md, LICENSE, and DEPLOYMENT.md for open source distribution
+- **Asset Path Fix**: Updated all image paths to use BASE_URL environment variable for proper GitHub Pages subdirectory deployment (January 10, 2025)
 
 ## User Preferences
 
