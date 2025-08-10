@@ -38,7 +38,10 @@ For other hosting providers:
 
 1. **Build the static site**:
    ```bash
-   npm run build
+   # For GitHub Pages subdirectory
+   npx vite build --base=/your-repo-name/
+   # For root domain  
+   npx vite build
    ```
 
 2. **Deploy the `dist/public` folder** to your hosting provider

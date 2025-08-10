@@ -31,7 +31,7 @@ jobs:
         run: npm ci
         
       - name: Build
-        run: vite build --base=/brew-haven/
+        run: npx vite build --base=/brew-haven/
         
       - name: Add .nojekyll
         run: touch dist/public/.nojekyll
