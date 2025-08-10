@@ -97,7 +97,8 @@ Add your tracking ID to the HTML template or use a React analytics library.
 ## Troubleshooting
 
 ### Common Issues
-1. **Jekyll processing error**: Add `.nojekyll` file to disable Jekyll (included in deployment scripts)
+1. **White screen deployment**: GitHub Pages subdirectory paths fixed automatically in workflow
+2. **Jekyll processing error**: Add `.nojekyll` file to disable Jekyll (included in deployment scripts)
 3. **Blank page after deployment**: Check browser console for errors
 4. **Images not loading**: Verify asset paths are correct
 5. **Routing issues**: Ensure server serves index.html for all routes
