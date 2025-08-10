@@ -4,6 +4,15 @@
 
 This is a full-stack TypeScript React coffee shop website application called "Brew Haven". The project features a modern web application with a React frontend, Express.js backend, and PostgreSQL database integration using Drizzle ORM. The application presents a coffee shop's landing page with multiple sections including hero, features, menu, story, gallery, testimonials, contact, and newsletter signup.
 
+## Recent Changes (January 2025)
+
+- **Authentic Gallery**: Updated with 12 real coffee shop photos showing actual customer experiences, food, and atmosphere
+- **Customer Testimonials**: Added real customer photos for Sarah Chen, Marcus Rodriguez, Amanda Foster (formerly Amy), and David Kim
+- **Mobile Experience**: Implemented swipe-based navigation for menu and testimonials with dot indicators
+- **Brand Integration**: Added custom Brew Haven logo with loading screen and favicon
+- **Responsive Design**: Separate hero images for desktop/mobile with optimized compositions
+- **UI Refinements**: Removed non-functional buttons, improved text formatting, reduced section padding
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

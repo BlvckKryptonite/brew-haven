@@ -10,7 +10,7 @@ const testimonials = [
     role: "Regular Customer",
     content:
       "The best coffee in the city, hands down. The baristas here are true artists, and you can taste the passion in every cup. The atmosphere is perfect for both work and relaxation.",
-    initial: "S",
+    photo: "/assets/sarah-chen_1754833658579.jpg",
   },
   {
     id: 2,
@@ -18,15 +18,15 @@ const testimonials = [
     role: "Coffee Enthusiast",
     content:
       "I've been coming here for three years and the quality never disappoints. The single-origin pour-overs are exceptional, and the staff always remembers my order. It feels like home.",
-    initial: "M",
+    photo: "/assets/marcus-rodriguez_1754833653120.jpg",
   },
   {
     id: 3,
-    name: "Amy Foster",
+    name: "Amanda Foster",
     role: "Freelance Designer",
     content:
       "As a remote worker, I appreciate the fast WiFi, comfortable seating, and the fact that they don't rush you. Plus, their nitro cold brew is absolutely incredible!",
-    initial: "A",
+    photo: "/assets/amanda-foster_1754833643509.jpg",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const testimonials = [
     role: "Local Business Owner",
     content:
       "Brew Haven has become my go-to spot for client meetings. The atmosphere is professional yet relaxed, and their lavender honey latte is unlike anything I've tried elsewhere. Outstanding service!",
-    initial: "D",
+    photo: "/assets/david-kim_1754833647657.jpg",
   },
 ];
 
@@ -132,9 +132,11 @@ export default function Testimonials() {
               </div>
               <p className="text-stone-300 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-stone-950 font-bold text-lg mr-4">
-                  {testimonial.initial}
-                </div>
+                <img
+                  src={testimonial.photo}
+                  alt={`${testimonial.name} - ${testimonial.role}`}
+                  className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-amber-400/20"
+                />
                 <div>
                   <h5 className="font-semibold text-stone-100">{testimonial.name}</h5>
                   <p className="text-stone-400 text-sm">{testimonial.role}</p>
@@ -175,9 +177,11 @@ export default function Testimonials() {
                     </div>
                     <p className="text-stone-300 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
                     <div className="flex items-center">
-                      <div className="w-12 h-12 bg-amber-400 rounded-full flex items-center justify-center text-stone-950 font-bold text-lg mr-4">
-                        {testimonial.initial}
-                      </div>
+                      <img
+                        src={testimonial.photo}
+                        alt={`${testimonial.name} - ${testimonial.role}`}
+                        className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-amber-400/20"
+                      />
                       <div>
                         <h5 className="font-semibold text-stone-100">{testimonial.name}</h5>
                         <p className="text-stone-400 text-sm">{testimonial.role}</p>
