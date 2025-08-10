@@ -8,18 +8,38 @@
 
 2. **Enable GitHub Pages** in your repository:
    - Go to repository Settings → Pages
-   - Set Source to "GitHub Actions"
-   - The workflow will automatically deploy on push to main branch
+   - Set Source to "Deploy from a branch"
+   - Select "docs" branch and "/ (root)" folder
+   - The workflow will automatically build and deploy to docs branch on push to main
 
 3. **Your site will be available at**: `https://yourusername.github.io/brew-haven`
 
-### Manual Deployment
+### Manual Deployment to docs branch
 
-If you prefer manual deployment:
+If you prefer manual deployment to GitHub Pages docs branch:
+
+1. **Run the deployment script**:
+   ```bash
+   ./deploy-to-docs.sh
+   ```
+
+2. **Push the docs branch**:
+   ```bash
+   git push origin docs
+   ```
+
+3. **Configure GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Set Source to "Deploy from a branch"
+   - Select "docs" branch and "/ (root)" folder
+
+### Manual Deployment to Other Hosts
+
+For other hosting providers:
 
 1. **Build the static site**:
    ```bash
-   npm run build:static
+   npm run build
    ```
 
 2. **Deploy the `dist/public` folder** to your hosting provider
