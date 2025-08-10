@@ -13,7 +13,7 @@ This is a full-stack TypeScript React coffee shop website application called "Br
 - **Responsive Design**: Separate hero images for desktop/mobile with optimized compositions
 - **UI Refinements**: Removed non-functional buttons, improved text formatting, reduced section padding
 - **Developer Credit**: Added "Demo developed by Muma K." at bottom of website
-- **GitHub Pages Optimization**: Removed Replit dev banner, cleaned up unused files, added GitHub Actions workflow
+- **GitHub Pages Optimization**: Removed Replit dev banner, cleaned up unused files, added simplified GitHub Actions workflow
 - **Documentation**: Created comprehensive README.md, LICENSE, and DEPLOYMENT.md for open source distribution
 
 ## User Preferences

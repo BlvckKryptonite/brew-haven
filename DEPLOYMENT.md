@@ -6,16 +6,10 @@
 
 1. **Fork or clone this repository** to your GitHub account
 
-2. **Enable GitHub Actions permissions**:
-   - Go to repository Settings → Actions → General
-   - Under "Workflow permissions", select "Read and write permissions"
-   - Check "Allow GitHub Actions to create and approve pull requests"
-
-3. **Enable GitHub Pages**:
+2. **Enable GitHub Pages**:
    - Go to repository Settings → Pages
-   - Set Source to "Deploy from a branch"
-   - Select "docs" branch and "/ (root)" folder
-   - The workflow will automatically build and deploy to docs branch on push to main
+   - Set Source to "GitHub Actions"
+   - The workflow will automatically build and deploy on push to main branch
 
 3. **Your site will be available at**: `https://yourusername.github.io/brew-haven`
 
@@ -103,8 +97,7 @@ Add your tracking ID to the HTML template or use a React analytics library.
 ## Troubleshooting
 
 ### Common Issues
-1. **Git error 128 (permission denied)**: Ensure GitHub Actions has write permissions in repository settings
-2. **Jekyll processing error**: Add `.nojekyll` file to disable Jekyll (included in deployment scripts)
+1. **Jekyll processing error**: Add `.nojekyll` file to disable Jekyll (included in deployment scripts)
 3. **Blank page after deployment**: Check browser console for errors
 4. **Images not loading**: Verify asset paths are correct
 5. **Routing issues**: Ensure server serves index.html for all routes
