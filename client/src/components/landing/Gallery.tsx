@@ -5,53 +5,63 @@ import { useRef } from "react";
 const galleryImages = [
   {
     id: 1,
-    src: "/assets/artisan-latte_1754775310994.jpg",
-    alt: "Artisan latte with beautiful leaf pattern latte art",
+    src: "/assets/brew-haven-gallery_1754832751394.avif",
+    alt: "Brew Haven coffee shop interior with warm lighting and comfortable seating",
   },
   {
     id: 2,
-    src: "/assets/double-espresso_1754775311003.jpg",
-    alt: "Double espresso shot being extracted from professional machine",
+    src: "/assets/gallery-1_1754832751403.avif",
+    alt: "Coffee preparation and artisanal brewing equipment",
   },
   {
     id: 3,
-    src: "/assets/lavender-honey-latte_1754776202134.jpg",
-    alt: "Lavender honey latte with dried lavender garnish",
+    src: "/assets/gallery-2_1754832751404.avif",
+    alt: "Fresh pastries and baked goods display",
   },
   {
     id: 4,
-    src: "/assets/vanilla-oat-corcado_1754775311006.jpg",
-    alt: "Vanilla oat cortado in gibraltar glass with latte art",
+    src: "/assets/gallery-3_1754832751404.avif",
+    alt: "Specialty coffee drinks and latte art creations",
   },
   {
     id: 5,
-    src: "/assets/single-pour-over_1754776207854.jpg",
-    alt: "Pour-over coffee preparation with Chemex dripper",
+    src: "/assets/gallery-4_1754832751404.avif",
+    alt: "Coffee beans and roasting process showcase",
   },
   {
     id: 6,
-    src: "/assets/nitro-cold-brew_1754775311004.jpg",
-    alt: "Cold brew coffee served in tall glass with ice",
+    src: "/assets/gallery-5_1754832751405.avif",
+    alt: "Cozy coffee shop atmosphere with customers enjoying drinks",
   },
   {
     id: 7,
-    src: "/assets/artisan-pastries_1754775311002.jpg",
-    alt: "Artisanal pastries and croissants on wooden serving board",
+    src: "/assets/gallery-6_1754832751405.avif",
+    alt: "Professional barista crafting the perfect cup of coffee",
   },
   {
     id: 8,
-    src: "/assets/strawberry-crepes_1754775311005.jpg",
-    alt: "Strawberry crepes with berry drizzle and mint garnish",
+    src: "/assets/gallery-7_1754832751405.jpg",
+    alt: "Overhead view of coffee table with multiple drinks, pastries, and open book creating a social coffee experience",
   },
   {
     id: 9,
-    src: "/assets/wembley-waffles_1754775311006.jpg",
-    alt: "Belgian waffles with blueberries and syrup drizzle",
+    src: "/assets/gallery-8_1754832751406.jpg",
+    alt: "Artisan lattes with beautiful latte art served on wooden boards with cake slices",
   },
   {
     id: 10,
-    src: "/assets/house-blend-beans_1754775311004.jpg",
-    alt: "Premium coffee beans in burlap sack with roasting equipment",
+    src: "/assets/gallery-9_1754832751406.jpg",
+    alt: "Golden croissant breakfast with coffee, butter, and fresh berries on elegant blue plate",
+  },
+  {
+    id: 11,
+    src: "/assets/gallery-10_1754832751407.jpg",
+    alt: "Customer enjoying coffee in warm ambient lighting with glasses creating intimate coffee shop moment",
+  },
+  {
+    id: 12,
+    src: "/assets/gallery-12_1754832751407.avif",
+    alt: "Coffee shop community and social gathering atmosphere",
   },
 ];
 
