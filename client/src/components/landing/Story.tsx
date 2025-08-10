@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import ourStoryImage from "@assets/our-story_1754865700629.jpg";
 
 export default function Story() {
   const ref = useRef(null);
@@ -35,7 +36,6 @@ export default function Story() {
                 as a force for good in our community and beyond.
               </p>
             </div>
-
           </motion.div>
 
           <motion.div
@@ -44,7 +44,7 @@ export default function Story() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}attached_assets/our-story_1754865700629.jpg`}
+              src={ourStoryImage}
               alt="Maria and David Hutchinson, founders of Brew Haven, in their aprons outside the cafe"
               className="rounded-xl shadow-2xl w-full h-auto"
             />
